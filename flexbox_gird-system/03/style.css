@@ -15,7 +15,7 @@ figure {
   .row {
     justify-content: center;
     align-content: flex-end;
-    gap: 2%;
+    gap: 2%; 
   }
   figure {
     flex-basis: 18.4%;

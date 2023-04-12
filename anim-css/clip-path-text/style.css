@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ccc;
+}
+
+.text {
+  position: relative;
+  font-size: 10rem;
+}
+
+.text__inner {
+  position: absolute;
+  background: #ccc;
+  transform: translate(-50%, -50%);
+}
+
+.text__inner--bottom {
+  color: #fff;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 110%);
+  transition: all 0.5s ease-in-out;
+}
+.text__inner--bottom:hover {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 110%);
+}
+
+.text__inner--top:hover + .text__inner--bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}

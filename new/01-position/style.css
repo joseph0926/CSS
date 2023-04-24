@@ -1,0 +1,50 @@
+/* 
+  1) position: relative 
+
+  - 기본 static 포지션과 같지만, static과 달리 z-index, top bottom left right 같은 위치를 지정할수있다 
+  - top등의 프로퍼티를 이용해 위치를 이동시켜도, 해당 요소의 원래 공간은 유지된다
+    (요소의 위치가 기본 위치에서 벗어나 있어도, 다른 요소들이 해당 요소의 원래 위치를 침범하지 않는다)
+  
+
+  2) z-index
+  
+  - z-index는 오직 position이 지정된 요소에만 적용됨 (static 제외)
+
+  3) position: absolute
+
+  - 요소를 absolute로 지정하면, 정상 흐름에서 제외된다
+    (해당 요소를 위해 보장된 공간이 없어진다)
+  - 기본적으로 position이 지정되어있는 부모 요소에 의존하지만, 만약 부모 요소에 position이 없다면    루트 요소에 의존한다
+
+  4) position: fixed
+  
+  - absolute와 똑같은 특성을 지니지만, 오직 루트 요소에만 의존한다
+  - 스크롤시 위치가 유지된다
+
+*/
+body {
+  background: radial-gradient(#0288d1, #01579b);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid #fff;
+  padding: 15px 30px;
+  border-radius: 4px;
+}
+
+.badge {
+  position: absolute;
+  background: #4caf50;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 50%;
+  top: -10px;
+  right: -10px;
+}

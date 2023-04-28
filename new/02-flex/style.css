@@ -1,0 +1,66 @@
+/*
+  Flex
+
+  1) flex-grow
+  - flex로 설정된 공간에서 여분 공간에 대해 차지하는 비율을 설정한다
+    ex) box-one { flex-grow: 1 } / box-two { flex-grow: 2 }
+        일때 box-one이 여분 공간중에 33%를 차지하고, box-two가 66%를 차지한다고 이해
+        만약, flex-grow: 1만 존재한다면 이것이 여분 공간 모두를 차지한다
+
+  2) flex-shrink
+  - flex-grow와 정반대
+    즉, flex-shrink는 숫자가 클수록 여분 공간에 대해서 빠르게 축소된다
+
+  3) flex-basis
+  - flex 주축에 대해서 설정한 공간을 차지한다
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background: linear-gradient(cyan, purple);
+}
+
+/* .nav {
+  background: #37474f;
+  height: 70px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+  width: 500px;
+}
+.nav-link {
+  color: #fff;
+  font-size: 2rem;
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  border-radius: 5px;
+  margin: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card footer {
+  background: slateblue;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}

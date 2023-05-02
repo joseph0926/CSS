@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(233, 223, 255);
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  color: rgb(44, 44, 44);
+}
+
+h1 {
+  color: rgb(83, 49, 156);
+}
+
+.container {
+  position: relative;
+  margin-top: 1rem;
+  background: #fff;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 64px 64px 64px;
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(200, 175, 255);
+  margin-bottom: 32px;
+  padding: 16px;
+}
+.tabs .active {
+  position: relative;
+}
+.tabs p {
+  padding: 8px;
+  transition: all 0.3s;
+}
+.tabs p:hover {
+  color: rgb(83, 49, 156);
+  cursor: pointer;
+}
+.tabs p.active {
+  color: rgb(83, 49, 156);
+}
+
+.line {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  top: 80px;
+  background: rgb(231, 231, 231);
+}
+
+.tabs .active::before {
+  position: absolute;
+  content: "";
+  width: 200%;
+  height: 4px;
+  background: rgb(83, 49, 156);
+  bottom: -29px;
+  left: -50%;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+}
+.range {
+  height: 2rem;
+  width: 2rem;
+  background: rgb(120, 92, 179);
+  border-radius: 50%;
+}
+.toggle-btn {
+  background: rgb(83, 49, 156);
+  height: 40px;
+  width: 170px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px 10px 16px;
+  margin: 0 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.toggle-btn span:first-of-type {
+  color: #fff;
+}
+.toggle-btn span:last-of-type {
+  background: #fff;
+  color: rgb(83, 49, 156);
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+.sessions-card {
+  background: rgb(243, 237, 252);
+  text-align: center;
+  padding: 32px;
+  width: 50%;
+  text-transform: uppercase;
+  margin-top: 32px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.sessions-card p {
+  color: rgb(44, 44, 44);
+  font-size: 12px;
+  font-weight: 700;
+}
+.sessions-card .num {
+  color: rgb(83, 49, 156);
+  font-size: 52px;
+}
+
+.desc {
+  line-height: 32px;
+  margin: 24px 0;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+.slider .bar {
+  width: 100%;
+  height: 16px;
+  background: rgb(248, 248, 248);
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 20px;
+}
+.slider .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 31%;
+  height: 18px;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(53, 10, 74, 1) 36%, rgba(83, 49, 156, 1) 100%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.slider .point {
+  position: absolute;
+  top: -3px;
+  left: 29%;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: rgb(83, 49, 156);
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+.slider .point:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.slider .scale {
+  width: 100%;
+}
+.slider .scale ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.cards {
+  display: flex;
+}
+.card {
+  background: rgb(250, 247, 255);
+  border-radius: 10px;
+  margin: 16px;
+  padding: 16px 32px;
+  box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-weight: 700;
+  color: rgb(83, 49, 156);
+  text-transform: uppercase;
+}
+.card .top-sessions {
+  padding: 8px;
+}
+.card .top-sessions p {
+  margin: 4px 0;
+}
+.card .price {
+  font-size: 42px;
+  color: #000;
+}
+
+@media only screen and (max-width: 758px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 100%;
+  }
+  .sessions-card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .sessions-card {
+    width: 100%;
+  }
+}

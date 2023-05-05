@@ -40,12 +40,51 @@
   display: none;
 }
 
-.nav .bar {
+.bar1,
+.bar2,
+.bar3 {
   background: #000;
   height: 4px;
   width: 36px;
   margin: 3px;
   border-radius: 10px;
+}
+
+.bar1Anim {
+  animation: flipbar1 1s;
+  animation-fill-mode: forwards;
+}
+.bar2Anim {
+  animation: fadebar 1s;
+  animation-fill-mode: forwards;
+}
+.bar3Anim {
+  animation: flipbar3 1s;
+  animation-fill-mode: forwards;
+}
+
+.mob-nav {
+  position: fixed;
+  top: 114px;
+  z-index: 2;
+  right: -80px;
+  width: 80px;
+  background-color: rgba(255, 255, 255, 0.7);
+  height: calc(100vh - 114px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s;
+}
+.mob-nav img {
+  width: 44px;
+  height: 44px;
+  padding: 0.5rem;
+}
+
+.showSide {
+  transform: translateX(-80px);
 }
 
 .grid-project {
@@ -150,6 +189,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .grid-project {
     grid-template-areas:
@@ -162,5 +202,32 @@
       "foam foam"
       "dimensional dimensional";
     gap: 0.8rem;
+  }
+}
+
+@keyframes fadebar {
+  from {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  to {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+}
+@keyframes flipbar1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg) translate(4px, 10px);
+  }
+}
+@keyframes flipbar3 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg) translate(4px, -10px);
   }
 }
